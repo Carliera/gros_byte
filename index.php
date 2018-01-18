@@ -20,14 +20,6 @@ $data = json_decode($CineName->getBody());
 $idShowtimes = $client->request('GET', 'showtimes');
 $dataId = json_decode($idShowtimes->getBody());
 
-foreach ($dataId as $key => $value) {
-  echo $value->id;
-  echo $value->name;
-  echo "<br>";
-}
-
-echo $dataId[0]->id;
-echo $dataId[0]->name;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -58,10 +50,10 @@ echo $dataId[0]->name;
         </div>
         <div class="row-2">
           <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about-us.html">Films</a></li>
-            <li><a href="articles.html">Tarifs</a></li>
-            <li><a href="contact-us.html">Contacts</a></li>
+            <li><a href="index.php" class="active">Home</a></li>
+            <li><a href="seances.php">Séances</a></li>
+            <li><a href="articles.php">Tarifs</a></li>
+            <li><a href="contact-us.php">Contacts</a></li>
           </ul>
         </div>
       </div>
