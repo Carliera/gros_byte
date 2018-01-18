@@ -11,18 +11,20 @@ echo $json;
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     //Connexion à la BD
-    //
+    $bd = new PDO("mysql:host=localhost;dbname=nightcode-simple","root","root");
     /////////////////////////////////////////
     //L'indice peux être changé selon le nom du fichier json envoyé
-
-        if(!isset($json["name"]))
+        if(!isset($_POST["name"]))
         {
             http_response_code(400);
         }
         else
         {
-            //Test
-            echo "OK";
+            $reqPrepare = $bd->exec("INSERT INTO movies (Title) VALUES $_POST[name]");
+            $query = $bd->query("SELECT IDMovie FROM movies WHERE Title = \"$_POST[name]\"");
+            $results = $query->fetch(PDO::FETCH_ASSOC);
+            echo $results["IDMovie"];
+            echo $_POST["name"];
         }
 
 }
