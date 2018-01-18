@@ -3,6 +3,6 @@
 $name = "LeGrandBôTécran";
 json_encode($name);
 
-echo $name;
-
+echo $name; 
+echo "bonjour";
 ?>
