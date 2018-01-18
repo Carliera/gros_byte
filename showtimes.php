@@ -14,15 +14,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     //
     /////////////////////////////////////////
     //L'indice peux être changé selon le nom du fichier json envoyé
-    $json = json_decode($_POST["json"]);
-    if(empty($json["name"]))
-    {
-        trigger_error("name non présent",E_USER_ERROR);
+    if(array_key_exists("json",$_POST)){
+        $json = json_decode($_POST["json"]);
+        if(empty($json["name"]))
+        {
+            http_response_code(400);
+        }
+        else
+        {
+            //Test
+            echo "OK";
+        }
     }
-    else
-    {
-        //Test
-        echo "OK";
+    else {
+        http_response_code(400);
     }
 }
 exit;
