@@ -1,8 +1,5 @@
 <?php
 
-$name = "LeGrandBôTécran";
-json_encode($name);
-
-echo $name; 
-echo "bonjour";
+$json = file_get_contents("name.json");
+var_dump($json);
 ?>
