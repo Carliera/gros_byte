@@ -1,6 +1,8 @@
 <?php
+header('Content-Type: application/json');
+$json = ["name" => "Les Gros Byte"];
+$json = json_encode($json);
+echo $json;
 
-$json = file_get_contents("name.json");
-header($json);
-
+exit;
 ?>
