@@ -66,7 +66,7 @@ $dataId = json_decode($idShowtimes->getBody());
     <ul class="movies">
       <li>
         <h4>Jumanji</h4>
-        <img src="image/Jumanji.jpg" style="width=20" alt="" />
+        <img src="image/jumanji.jpg" style="width=20" alt="" />
         <p>Le destin de quatre lycéens en retenue bascule lorsqu’ils sont aspirés dans le monde de Jumanji. Après avoir découvert une vieille console contenant un jeu vidéo dont ils n’avaient jamais entendu parler, les quatre jeunes se retrouvent mystérieusement propulsés au cœur de la jungle de Jumanji, dans le corps de leurs avatars. Ils vont rapidement découvrir que l’on ne joue pas à Jumanji, c’est le jeu qui joue avec vous… Pour revenir dans le monde réel, il va leur falloir affronter les pires dangers et triompher de l’ultime aventure. Sinon, ils resteront à jamais prisonniers de Jumanji…</p>
         <div class="wrapper"><a href="#" class="link2"><span><span>+ de détails</span></span></a></div>
       </li>
