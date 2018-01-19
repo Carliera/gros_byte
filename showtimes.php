@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
                     $tabSeat[] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" => $j];
                 }
             }      
-            $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"], "seatConfiguration" => $tabSeat]);
+            $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"],"seatsAvailable"=>49, "seatConfiguration" => $tabSeat]);
             echo $res;
         }
         else http_response_code(400);
