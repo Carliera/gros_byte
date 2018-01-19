@@ -29,6 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     //L'indice peux être changé selon le nom du fichier json envoyé
         if(!isset($_POST["name"]))
         {
+            print_r($_POST);
             http_response_code(400);
         }
         else
