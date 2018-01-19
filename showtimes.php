@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $requete = $bd->prepare("SELECT * FROM movies WHERE IDMovie = ".$_GET["id"]);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
+        print_r($result);
         if($requete->rowcount() != 0) {
             $res = json_encode( ["name" => $result["title"]]);
             echo $res;
