@@ -19,9 +19,8 @@ $data = json_decode($CineName->getBody());
 
 $idShowtimes = $client->request('GET', 'showtimes');
 $dataId = json_decode($idShowtimes->getBody());
-?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include 'head.php'; ?>
 <body id="page1">
@@ -43,18 +42,26 @@ $dataId = json_decode($idShowtimes->getBody());
    </div>
  </div>
 
-  <div class="content">
-    <h3>liste des séances</h3>
-    <fieldset>
-      <div class="field">
-        <label>séances :</label>
-        <?php foreach ($dataId as $key => $value): ?>
-          <p><?= $value->id ?></p>
-          <p><?= $value->name ?></p>
-        <?php endforeach; ?>
-      </div>
-    </fieldset>
-  </div>
+ <div class="content">
+   <h3>Ajouter une seance</h3>
+   <form id="contacts-form" action="#">
+     <fieldset>
+
+       <div class="field">
+         <label>ajout : </label>
+         <form action="cible.php" method="post">
+
+           <p>
+             <input type="text" name="prenom" />
+             <input type="submit" value="Valider" />
+           </p>
+         </form>
+
+       </div>
+
+     </fieldset>
+   </form>
+ </div>
 
 
 

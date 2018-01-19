@@ -1,5 +1,5 @@
 <head>
-<title>Le Grand Bô Técran</title>
+<title><?php echo $data->name; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="icon" href="image/favicon.ico">
