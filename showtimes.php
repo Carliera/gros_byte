@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         }
         else{
 
-        
+        $json = [0=>["id"=>4,"name" => "StarWars"],1=>["id"=>5,"name"=>"starwars2"]];
         $json = json_encode($json);
         echo $json;
     }
