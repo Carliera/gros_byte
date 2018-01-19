@@ -26,6 +26,7 @@ $dataId = json_decode($idShowtimes->getBody());
 <head>
 <title>Le Grand Bô Técran</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="image/favicon.png">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
 <script src="js/cufon-yui.js" type="text/javascript"></script>
@@ -61,7 +62,7 @@ $dataId = json_decode($idShowtimes->getBody());
  </div>
 
   <div class="content">
-    <h3>séances disponibles</h3>
+    <h3>liste des séances</h3>
     <fieldset>
       <div class="field">
         <label>séances :</label>
