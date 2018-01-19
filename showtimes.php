@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         echo $json;
     }
     else{
-        //Connexion à la BD
+        
         $requete = $bd->query("SELECT * FROM movie");
         $result = $requete->fetch(PDO::FETCH_ASSOC);
         if($result["IDMovie"] == $GET["id"]){
@@ -24,7 +24,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 }
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    //Connexion à la BD
     /////////////////////////////////////////
     //L'indice peux être changé selon le nom du fichier json envoyé
         if(!isset($_POST["name"]))
