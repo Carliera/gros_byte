@@ -23,8 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         }
         else{
         $json = array();
-        for ($i=5; $i < ; $i++) { 
-            for ($j=10; $j < ; $j++) { 
+        for ($i=1; $i <= 5; $i++) { 
+            for ($j=0; $j <= 10 ; $j++) { 
                 $json[] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" = $j];
             }
         }      
