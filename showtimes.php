@@ -5,10 +5,27 @@ $bd = new PDO("mysql:host=localhost;dbname=nightcode","root","root");
 if($_SERVER["REQUEST_METHOD"] == "GET")
 {
     if(!isset($_GET["id"])){
+        if(isset($_GET["res"])){
+            $i=1;
+            while($i != 50)
+            {
+                $requeteRes = $bd->prepare("INSERT INTO seat (available) VALUES (true) WHERE IDSeat = ".$i);
+                $requeteSearch = $bd->prepare("SELECT available FROM seat WHERE IDSeat = ".$i)
+                $requeteSearch->execute();
+                $resSearch = $requeteSearch->fetch(PDO::FETCH_ASSOC);
+                if($resSearch["available"] == true){
+                    $requeteRes = $requete->execute(array("id" => $i));
+                    break;
+                }
+                $i = $i +1;
+            }
+                           
+        }
+        else{
         $json = [0 => ["id" => 423, "name" => "Star Wars : Le reveil de la force"], 1 => ["id" => 424, "name" => "Les Cookies"], 2=>["id"=>425, "name" => "Megashark vs M.Lamperier"]];
         $json = json_encode($json);
-            
         echo $json;
+    }
     }
     else{
         
@@ -16,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
         if($requete->rowcount() != 0) {
-            $res = json_encode( ["id"=>$result["IDMovie"],"name" => $result["title"]]);
+            $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"]]);
             echo $res;
         }
         else http_response_code(400);
