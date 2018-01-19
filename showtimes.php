@@ -12,8 +12,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     }
     else{
         
-        $requete = $bd->query("SELECT * FROM movie");
-        $result = $requete->fetch(PDO::FETCH_ASSOC);
+        $requete = $bd->prepare("SELECT * FROM movie");
+        $reqexec = $requete->execute();
+        $result = $reqexec->fetch(PDO::FETCH_ASSOC);
         if($result["IDMovie"] == $GET["id"]){
             $res = json_encode( ["name" => $result["title"]]);
         }
