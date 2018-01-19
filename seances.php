@@ -44,7 +44,7 @@ $dataId = json_decode($idShowtimes->getBody());
  </div>
 
   <div class="content">
-    <h3>séances disponibles</h3>
+    <h3>liste des séances</h3>
     <fieldset>
       <div class="field">
         <label>séances :</label>
