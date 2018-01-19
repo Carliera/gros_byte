@@ -22,7 +22,13 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
                            
         }
         else{
-        $json = [0 => ["id" => 423, "name" => "Star Wars : Le reveil de la force"], 1 => ["id" => 424, "name" => "Les Cookies"], 2=>["id"=>425, "name" => "Megashark vs M.Lamperier"]];
+        $json = array();
+        for ($i=5; $i < ; $i++) { 
+            for ($j=10; $j < ; $j++) { 
+                $json[] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" = $j];
+            }
+        }      
+        
         $json = json_encode($json);
         echo $json;
     }
@@ -32,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $requete = $bd->prepare("SELECT * FROM movies WHERE IDMovie = ".$_GET["id"]);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
-        if($requete->rowcount() != 0) {
+        if($requete->rowcount() != 0) { 
             $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"]]);
             echo $res;
         }
