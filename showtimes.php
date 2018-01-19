@@ -22,12 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
                            
         }
         else{
-        $json = array();
-        for ($i=1; $i <= 5; $i++) { 
-            for ($j=1; $j <= 10 ; $j++) { 
-                $json[] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" => $j];
-            }
-        }      
+
         
         $json = json_encode($json);
         echo $json;
@@ -39,7 +34,12 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
         if($requete->rowcount() != 0) { 
-            $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"]]);
+            $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"], "seatConfiguration" => array()]);
+            for ($i=1; $i <= 5; $i++) { 
+                for ($j=1; $j <= 10 ; $j++) { 
+                    $res["seatConfiguration"][] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" => $j];
+                }
+            }      
             echo $res;
         }
         else http_response_code(400);
