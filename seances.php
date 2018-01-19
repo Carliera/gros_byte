@@ -23,16 +23,7 @@ $dataId = json_decode($idShowtimes->getBody());
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Le Grand Bô Técran</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
-<script src="js/cufon-yui.js" type="text/javascript"></script>
-<script src="js/cufon-replace.js" type="text/javascript"></script>
-<script src="js/Gill_Sans_400.font.js" type="text/javascript"></script>
-<script src="js/script.js" type="text/javascript"></script>
-</head>
+<?php include 'head.php'; ?>
 <body id="page1">
 
 <div class="tail-top">
@@ -47,15 +38,7 @@ $dataId = json_decode($idShowtimes->getBody());
             <li><a href="#"><img src="images/icon3.gif" alt="" /></a></li>
           </ul>
         </div>
-        <div class="row-2">
-          <ul>
-            <li><a href="index.php" >Home</a></li>
-            <li><a href="seances.php" class="active">Séances</a></li>
-            <li><a href="articles.php">Tarifs</a></li>
-            <li><a href="contact-us.php">Contacts</a></li>
-          </ul>
-        </div>
-      </div>
+        <?php include 'navbar.php'; ?>
     </div>
    </div>
  </div>
@@ -80,7 +63,7 @@ $dataId = json_decode($idShowtimes->getBody());
         <div class="left">
           <div class="right">
             <div class="footerlink">
-              <p class="lf">Copyright &copy; 2018 <a href="#">LeGrandBôTécran</a> - All Rights Reserved</p>
+              <p class="lf">Copyright &copy; 2018 <a href="#"><?php echo $data->name; ?></a> - All Rights Reserved</p>
               <p class="rf">Design by Les Gros Byte</p>
               <div style="clear:both;"></div>
             </div>
