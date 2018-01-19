@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
         if($requete->rowcount() != 0) {
-            $res = json_encode( ["name" => $result["title"]]);
+            $res = json_encode( ["id"=>$result["IDMovie"],"name" => $result["title"]]);
             echo $res;
         }
         else http_response_code(400);
