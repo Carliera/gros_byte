@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     else{
         //Connexion à la BD
         $bd = new PDO("mysql:host=localhost;dbname=nightcode-simple","root","root");
-        $requete = $bd->("SELECT * FROM movie");
+        $requete = $bd->query("SELECT * FROM movie");
         $result = $requete->fetch(PDO::FETCH_ASSOC);
         if($result["IDMovie"] == $GET["id"]){
             $res = json_encode( ["name" => $result["title"]]);
