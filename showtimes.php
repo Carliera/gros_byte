@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     }
     else{
         
-        $requete = $bd->prepare("SELECT * FROM movies WHERE IDMovie == ".$_GET["id"]);
+        $requete = $bd->prepare("SELECT * FROM movies WHERE IDMovie = ".$_GET["id"]);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_ASSOC);
         if($result->rowcount() != 0) {
