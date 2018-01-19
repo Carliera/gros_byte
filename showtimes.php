@@ -38,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
             for ($i=1; $i <= 5; $i++) { 
                 for ($j=1; $j <= 10 ; $j++) { 
                     $tabSeat[] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" => $j];
-                }
+                }   
             }      
             $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"],"seatsAvailable"=>49, "seatConfiguration" => $tabSeat]);
             echo $res;
