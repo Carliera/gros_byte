@@ -44,22 +44,19 @@ $dataId = json_decode($idShowtimes->getBody());
 
  <div class="content">
    <h3>Ajouter une seance</h3>
-   <form id="contacts-form" action="#">
-     <fieldset>
-
+   <?php if (isset($_GET['error'])): ?>
+     <p>Erreur, veuillez saisir un nom</p>
+   <?php endif; ?>
+   <form id="contacts-form" action="addseance_process.php" method="post">
        <div class="field">
          <label>ajout : </label>
-         <form action="cible.php" method="post">
-
+         <form action="addseance_process.php" method="post">
            <p>
              <input type="text" name="prenom" />
              <input type="submit" value="Valider" />
            </p>
          </form>
-
        </div>
-
-     </fieldset>
    </form>
  </div>
 
