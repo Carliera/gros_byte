@@ -27,17 +27,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     /////////////////////////////////////////
     //L'indice peux être changé selon le nom du fichier json envoyé
-        if(!isset($_POST["name"]))
+    $post = file_get_contents('php://input');
+    $postDecoded = json_decode($post);
+        if(!isset($postDecoded["name"]))
         {
-            $post = file_get_contents('php://input');
-            print_r($post);
             http_response_code(400);
         }
         else
         {
             $reqPrepare = $bd->prepare("INSERT INTO movies (title) VALUES (:title)");
-            $result = $reqPrepare->execute(array("title" => $_POST["name"]));
-            $res = ["id" => $bd->lastInsertId(), "name" => $_POST["name"]];
+            $result = $reqPrepare->execute(array("title" => $postDecoded["name"]));
+            $res = ["id" => $bd->lastInsertId(), "name" => $postDecoded["name"]];
             $res = json_encode($res);
             echo $res;
         }
