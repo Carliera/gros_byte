@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
             while($i != 50)
             {
                 $requeteRes = $bd->prepare("INSERT INTO seat (available) VALUES (true) WHERE IDSeat = ".$i);
-                $requeteSearch = $bd->prepare("SELECT available FROM seat WHERE IDSeat = ".$i)
+                $requeteSearch = $bd->prepare("SELECT available FROM seat WHERE IDSeat = ".$i);
                 $requeteSearch->execute();
                 $resSearch = $requeteSearch->fetch(PDO::FETCH_ASSOC);
                 if($resSearch["available"] == true){
