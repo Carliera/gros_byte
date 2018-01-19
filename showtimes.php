@@ -1,7 +1,6 @@
 <?php
 header('Content-Type: application/json');
 $bd = new PDO("mysql:host=localhost;dbname=nightcode","root","root");
-print_r($_GET);
 
 if($_SERVER["REQUEST_METHOD"] == "GET")
 {
