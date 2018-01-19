@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $json = [0=>["id"=>4,"name" => "StarWars"],1=>["id"=>5,"name"=>"starwars2"]];
         $json = json_encode($json);
         echo $json;
-    }
+        }
     }
     else{
         
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
             $tabSeat = array();
             for ($i=1; $i <= 5; $i++) { 
                 for ($j=1; $j <= 10 ; $j++) { 
-                    $tabSeat[] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" => $j];
+                    $tabSeat[] = ["id" => 425, "name" => "Star Wars : Le reveil de la force", "row" => $i, "seat" => $j, "used"=>true];
                 }   
             }      
             $res = json_encode(["id"=>$result["IDMovie"],"name" => $result["title"],"seatsAvailable"=>49, "seatConfiguration" => $tabSeat]);
