@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     }
     else{
         //Connexion à la BD
-        $bd = new PDO("mysql:host=localhost;dbname=nightcode-simple","root","root");
+        $bd = new PDO("mysql:host=localhost;dbname=nightcode","root","root");
         $requete = $bd->query("SELECT * FROM movie");
         $result = $requete->fetch(PDO::FETCH_ASSOC);
         if($result["IDMovie"] == $GET["id"]){
@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     //Connexion à la BD
-    $bd = new PDO("mysql:host=localhost;dbname=nightcode-simple","root","root");
+    $bd = new PDO("mysql:host=localhost;dbname=nightcode","root","root");
     /////////////////////////////////////////
     //L'indice peux être changé selon le nom du fichier json envoyé
         if(!isset($_POST["name"]))
