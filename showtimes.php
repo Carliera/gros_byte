@@ -20,10 +20,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
         else
         {
-            $reqPrepare = $bd->exec("INSERT INTO movies (Title) VALUES $_POST[name]");
-            $query = $bd->query("SELECT IDMovie FROM movies WHERE Title = \"$_POST[name]\"");
-            $results = $query->fetch(PDO::FETCH_ASSOC);
-            echo $results["IDMovie"];
+            $reqPrepare = $bd->prepare("INSERT INTO movies (title) VALUES (:title)");
+            $result = $reqPrepare->execute(array("title" => $_POST["name"]));
+            echo $bd->lastInsertId();
             echo $_POST["name"];
         }
 
