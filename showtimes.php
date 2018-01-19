@@ -15,8 +15,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         $requete = $bd->prepare("SELECT * FROM movie");
         $reqexec = $requete->execute();
         print_r($reqexec->errorInfo());
+        print_r($_GET);
         $result = $reqexec->fetch(PDO::FETCH_ASSOC);
-        if($result["IDMovie"] == $GET["id"]){
+        if($result["IDMovie"] == $_GET["id"]){
             $res = json_encode( ["name" => $result["title"]]);
         }
         else http_response_code(400);
