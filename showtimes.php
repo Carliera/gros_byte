@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     /////////////////////////////////////////
     //L'indice peux être changé selon le nom du fichier json envoyé
     $post = file_get_contents('php://input');
-    $postDecoded = json_decode($post);
+    $postDecoded = json_decode($post,true);
         if(!isset($postDecoded["name"]))
         {
             http_response_code(400);
