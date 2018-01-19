@@ -22,8 +22,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $reqPrepare = $bd->prepare("INSERT INTO movies (title) VALUES (:title)");
             $result = $reqPrepare->execute(array("title" => $_POST["name"]));
-            echo $bd->lastInsertId();
-            echo $_POST["name"];
+            $res = [$bd->lastInsertId(),$_POST["name"]];
+            $res = json_encode($res);
+            echo $res;
         }
 
 }
